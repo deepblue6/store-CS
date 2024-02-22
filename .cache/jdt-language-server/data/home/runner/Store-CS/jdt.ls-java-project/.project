@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>jdt.ls-java-project</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/Clothing.java</name>
+			<type>1</type>
+			<location>/home/runner/Store-CS/src/main/java/Clothing.java</location>
+		</link>
+		<link>
+			<name>src/Main.java</name>
+			<type>1</type>
+			<location>/home/runner/Store-CS/src/main/java/Main.java</location>
+		</link>
+		<link>
+			<name>src/Restaurant.java</name>
+			<type>1</type>
+			<location>/home/runner/Store-CS/src/main/java/Restaurant.java</location>
+		</link>
+		<link>
+			<name>src/main/java/Store.java</name>
+			<type>1</type>
+			<location>/home/runner/Store-CS/src/main/java/Store.java</location>
+		</link>
+		<link>
+			<name>src/main/java/TacoPlace.java</name>
+			<type>1</type>
+			<location>/home/runner/Store-CS/src/main/java/TacoPlace.java</location>
+		</link>
+	</linkedResources>
+</projectDescription>
