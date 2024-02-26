@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Crocs extends Clothing{
   private String percentStyle;
-  private ArrayList<CrocItem> clothes;
-  private ArrayList<CharmItem> charms;
+  private ArrayList<Item> clothes;
+  private ArrayList<Item> charms;
   private String charm;
   ///
   public static final String ANSI_RESET = "\u001B[0m";
@@ -48,19 +48,19 @@ public class Crocs extends Clothing{
     }
 
     public void initializeMenu() {
-      clothes.add(new CrocItem("Mator Crocs", 49.99));
-      clothes.add(new CrocItem("Lightning McQueen Crocs", 59.99));
-      clothes.add(new CrocItem("green crocs", 39.99));
-      clothes.add(new CrocItem("Blue crocs", 44.99));
-      clothes.add(new CrocItem("pink crocs", 34.99));
-      clothes.add(new CrocItem("purple crocs", 54.99));
+      clothes.add(new Item("Mator Crocs", 49.99));
+      clothes.add(new Item("Lightning McQueen Crocs", 59.99));
+      clothes.add(new Item("green crocs", 39.99));
+      clothes.add(new Item("Blue crocs", 44.99));
+      clothes.add(new Item("pink crocs", 34.99));
+      clothes.add(new Item("purple crocs", 54.99));
 
-      charms.add(new CharmItem("Mango Salsa", 9.99));
-      charms.add(new CharmItem("Pico de Gallo Salsa", 8.99));
-      charms.add(new CharmItem("Corn Salsa", 7.99));
-      charms.add(new CharmItem("Tomatillo Salsa", 6.99));
-      charms.add(new CharmItem("Chile Salsa", 5.99));
-      charms.add(new CharmItem("Jal Salsa", 4.99));
+      charms.add(new Item("Mango Salsa", 9.99));
+      charms.add(new Item("Pico de Gallo Salsa", 8.99));
+      charms.add(new Item("Corn Salsa", 7.99));
+      charms.add(new Item("Tomatillo Salsa", 6.99));
+      charms.add(new Item("Chile Salsa", 5.99));
+      charms.add(new Item("Jal Salsa", 4.99));
   }
     
   public String PStyle(){
@@ -84,7 +84,7 @@ public class Crocs extends Clothing{
         print("You now have "+ ANSI_PURPLE+this.getCharm() + ANSI_RESET +" on your Crocs!");
 }
 
-public ArrayList<CrocItem> getClothes() {
+public ArrayList<Item> getClothes() {
   return this.clothes;
 }
 
@@ -92,48 +92,5 @@ public ArrayList<CrocItem> getClothes() {
   ////
   ////
   ////
-  private static class CharmItem {
-    private String name;
-    private double price;
 
-    public CharmItem(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    @Override
-    public String toString() {
-        return name + " - $" + price;
-    }
- }
- private static class CrocItem {
-  private String name;
-  private double price;
-
-  public CrocItem(String name, double price) {
-      this.name = name;
-      this.price = price;
-  }
-
-  public String getName() {
-      return name;
-  }
-
-  public double getPrice() {
-      return price;
-  }
-
-  @Override
-  public String toString() {
-      return name + " - $" + price;
-  }
-}
 }
