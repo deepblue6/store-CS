@@ -52,12 +52,21 @@ class Store {
     size = s;
   }
 
+  public void deductMoney(Item item) {
+    if(this.price - item.getPrice() < 0) {
+      print("You cannot buy this because you cannot afford it.");
+      print("");
+    }
+    else {
+      this.price -= item.getPrice();
+    }
+  }
+
   public <T> void printMenu(String menuName, ArrayList<T> arrList) {
     print("Menu for " + menuName + ": ");
     for (T item : arrList) {
         print(item.toString());
     }
-    print("");
 }
 
 public void print(String message) {
@@ -111,6 +120,7 @@ public static class Item {
   public String toString() {
       return name + " - $" + price;
   }
+
 }
 
 

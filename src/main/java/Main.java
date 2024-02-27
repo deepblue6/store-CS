@@ -57,18 +57,7 @@ public class Main {
         if (input.equals("1")) {
             d.printMenu("Gucci", d.getClothes());
             print("Which one do you want to buy?");
-            Scanner inp = new Scanner(System.in);
-
-            if (inp != null) {
-                String selectedCloth = inp.nextLine();
-                for (Store.Item item : d.getClothes()) {
-                    if (item.getName().equals(selectedCloth)) {
-                        double price = item.getPrice();
-                        print("The price of " + selectedCloth + " is: " + price + "$");
-                        break;
-                    }
-                }
-            }
+            findInList(d);
         } else if (input.equals("2")) {
             d.printMenu("Gucci", d.getBags());
         } else if (input.equals("3")) {
@@ -96,8 +85,15 @@ public class Main {
         if (input.equals("1")) {
             croc.printMenu("Crocs", croc.getClothes());
             print("What do you want to buy? You have " + croc.randMoney("clothing") + "$");
+            findInList(croc);
+            croc.deductMoney(croc.getClothes().get(0));
+
         } else if (input.equals("2")) {
-            print("");
+            // work on this part, where it handles the charms
+            croc.printMenu("Charms", croc.getCharms() );
+            print("Hi! welcome the the Charms section, what would you like to buy? By looking at your credit card we see that you have " 
+            + croc.randMoney("Clothing") + "$");
+            findInList(croc);
         } else if (input.equals("exit")) {
             System.exit(0);
         } else {
@@ -141,6 +137,25 @@ public class Main {
             System.out.println("");
         } else {
             System.out.println(message);
+        }
+    }
+
+    public static void findInList(Clothing st) {
+        boolean found = false;
+        Scanner inp = new Scanner(System.in); 
+        if (inp != null) {
+            String selectedCloth = inp.nextLine();
+            for (Store.Item item : st.getClothes()) {
+                if (item.getName().equals(selectedCloth)) {
+                    found = true;
+                    double price = item.getPrice();
+                    print("The price of this OUTSTANDING" + selectedCloth + " is: " + price + "$");
+                    break;
+                }
+            }
+            if(!found) {
+                print("We could not find that item in the clothing store.");
+            }
         }
     }
 }

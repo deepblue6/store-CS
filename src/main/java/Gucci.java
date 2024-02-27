@@ -17,10 +17,6 @@ public class Gucci extends Clothing {
         print("");
     }
 
-    public ArrayList<Item> getClothes() {
-        return this.clothes;
-    }
-
     public ArrayList<Store.Item> getBags() {
         return this.bags;
     }

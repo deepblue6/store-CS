@@ -55,4 +55,8 @@ public class Clothing extends Store {
             return true;
         }
     }
+
+    public ArrayList<Item> getClothes() {
+        return this.clothes;
+    }
 }

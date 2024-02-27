@@ -23,9 +23,9 @@ public class Crocs extends Clothing{
     this.clothes = new ArrayList<>();
   }
 
-  public String getCharm(){
-    return ""+charm; 
-     }
+ public ArrayList<Item> getCharms() {
+        return this.charms;
+    }
   public void setCharm(String c){
      this.charm =  c; 
    }
@@ -55,12 +55,12 @@ public class Crocs extends Clothing{
       clothes.add(new Item("pink crocs", 34.99));
       clothes.add(new Item("purple crocs", 54.99));
 
-      charms.add(new Item("Mango Salsa", 9.99));
-      charms.add(new Item("Pico de Gallo Salsa", 8.99));
-      charms.add(new Item("Corn Salsa", 7.99));
-      charms.add(new Item("Tomatillo Salsa", 6.99));
-      charms.add(new Item("Chile Salsa", 5.99));
-      charms.add(new Item("Jal Salsa", 4.99));
+      charms.add(new Item("Micky Mouse", 9.99));
+      charms.add(new Item("Crocodile", 8.99));
+      charms.add(new Item("Utsav", 7.99));
+      charms.add(new Item("SpongeBob", 6.99));
+      charms.add(new Item("Rock", 5.99));
+      charms.add(new Item("Stick", 4.99));
   }
     
   public String PStyle(){
