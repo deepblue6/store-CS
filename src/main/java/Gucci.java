@@ -2,13 +2,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Gucci extends Clothing {
-    private boolean drippedOut;
     private ArrayList<Store.Item> bags; // Use the fully qualified name
 
     public Gucci(String c, String n, String s) {
         super(c, "Gucci", s);
-        this.clothingType = "Designer";
-        drippedOut = true;
         this.bags = new ArrayList<>();
     }
 

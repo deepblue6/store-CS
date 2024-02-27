@@ -18,19 +18,18 @@ class TacoPlace extends Restaurant {
     this.foodItems.add(new Food("burrito", 5.50));
   }
 
-  public void printObject() {
-    print(this.name + " is a " + this.size + " " + this.color + " " + this.cuisineType
-        + " restaurant with " + this.salsaVarieties.size() + " different and unique salsa varieties.");
-    print("");
-  }
-
   public void initializeMenu() {
-
     Collections.addAll(this.menu, "Extra Cheese Taco", "Double Beef Burrito", "Chicken Burrito", "Steak Burrito",
         "Chicken Tacos", "Steak Taco");
     Collections.addAll(this.salsaVarieties,
         "Mango Salsa", "Pico de Gallo Salsa", "Corn Salsa", "Tomatillo Salsa", "Chile Salsa", "Jal Salsa");
   }
+
+
+  ///
+  ///
+  ///
+  ///
 
   public void eatTacos() {
     print("Enjoying delicious tacos at " + this.name + "!");

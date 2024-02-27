@@ -46,13 +46,13 @@ public class Clothing extends Store {
     public boolean checkSteal() {
         if ((Math.random()) * (100 - 1) + 1 > 50) {
             this.setSteal(true);
-            System.out.println("Uh-oh! Utsav stole your " + this.name + " to flip it on ebay!");
-            System.out.println();
-            return false;
-        } else {
-            System.out.println("Your " + this.name + " survived another day from the clutches of the most heinous villain UTSAV!");
+            System.out.println("You stole the " + this.name + "!");
             System.out.println();
             return true;
+        } else {
+            System.out.println("You got jumped by Utsav the Security Guard! See you next time!");
+            System.out.println();
+            return false;
         }
     }
 

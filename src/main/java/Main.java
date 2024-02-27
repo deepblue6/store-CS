@@ -17,9 +17,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         userBalance = getRandomCashAmount();
-        String startChoice = askStart();
+
 
         while (!saysExit) {
+            String startChoice = askStart();
             if (startChoice.equals("1")) {
                 print("Welcome to the clothing store. This section features Gucci and Crocs. Which one do you want to shop at?");
                 print("[1] GUCCI");
@@ -50,17 +51,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         print("\nGucci has a lot of marvelous clothes and bags at extremely affordable prices for all. What are you interested in today? You have " + d.randMoney("clothing") + "$. If you're too broke, you can try to steal something.");
         print(ANSI_RED + "[1] Clothes" + ANSI_RESET);
-        print(ANSI_CYAN + "[2] Bags" + ANSI_RESET);
-        print("[3] Steal");
+        print("[2] Steal");
         String input = scanner.nextLine();
 
         if (input.equals("1")) {
             d.printMenu("Gucci", d.getClothes());
             print("Which one do you want to buy?");
             findInList(d);
-        } else if (input.equals("2")) {
-            d.printMenu("Gucci", d.getBags());
-        } else if (input.equals("3")) {
+        }  else if (input.equals("2")) {
             if (d.checkSteal()) {
                 saysExit = true;
             } else {
@@ -79,7 +77,7 @@ public class Main {
         croc.initializeMenu();
         print("\nCrocs get you dripped out! What do you want to buy?");
         print(ANSI_RED + "[1] Shoes" + ANSI_RESET);
-        print(ANSI_CYAN + "[2] Charms" + ANSI_RESET);
+        print(ANSI_CYAN + "[2] Steal" + ANSI_RESET);
         String input = scanner.nextLine();
 
         if (input.equals("1")) {
@@ -88,12 +86,6 @@ public class Main {
             findInList(croc);
             croc.deductMoney(croc.getClothes().get(0));
 
-        } else if (input.equals("2")) {
-            // work on this part, where it handles the charms
-            croc.printMenu("Charms", croc.getCharms() );
-            print("Hi! welcome the the Charms section, what would you like to buy? By looking at your credit card we see that you have " 
-            + croc.randMoney("Clothing") + "$");
-            findInList(croc);
         } else if (input.equals("exit")) {
             System.exit(0);
         } else {
