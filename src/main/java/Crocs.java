@@ -21,12 +21,12 @@ public class Crocs extends Clothing{
   }
 
     public void initializeMenu() {
-      clothes.add(new Item("Mator Crocs", 49.99));
-      clothes.add(new Item("Lightning McQueen Crocs", 59.99));
-      clothes.add(new Item("green crocs", 39.99));
-      clothes.add(new Item("Blue crocs", 44.99));
-      clothes.add(new Item("pink crocs", 34.99));
-      clothes.add(new Item("purple crocs", 54.99));
+      clothes.add(new Item("Mator Crocs"));
+      clothes.add(new Item("Lightning McQueen Crocs"));
+      clothes.add(new Item("green crocs"));
+      clothes.add(new Item("Blue crocs"));
+      clothes.add(new Item("pink crocs"));
+      clothes.add(new Item("purple crocs"));
   }
 
 public ArrayList<Item> getClothes() {
