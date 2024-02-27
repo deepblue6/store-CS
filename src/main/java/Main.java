@@ -77,12 +77,17 @@ public class Main {
 
         if (input.equals("1")) {
             croc.printMenu("Crocs", croc.getClothes());
-            
-            if(findInList(croc)!=-1) {
-                print("BY");
+            findInList(croc);
+        } 
+        else if(input.equals("2")) {
+            if (croc.checkSteal()) {
+                saysExit = true;
+            } else {
+                print("You can't steal anything right now.");
             }
+        }
 
-        } else if (input.equals("exit")) {
+        else if (input.equals("exit")) {
             System.exit(0);
         } else {
             print("I could not understand. Could you try again please?");
@@ -128,7 +133,7 @@ public class Main {
         }
     }
 
-    public static int findInList(Clothing st) {
+    public static void findInList(Clothing st) {
         Scanner inp = new Scanner(System.in);
         if (inp != null) {
             String selectedCloth = inp.nextLine();
@@ -136,11 +141,11 @@ public class Main {
                 Store.Item item = st.getClothes().get(i);
     
                 if (item.getName().equals(selectedCloth)) {
-                    return i;
+                    print("You bought " + selectedCloth + "! Heading back to the main plaza now...");
+                    return;
                 }
             }
-            print("We could not find that item in the clothing store.");
+            print("We could not find that item in the clothing store. Heading back to main plaza now...");
         }
-        return -1;
     }
 }
