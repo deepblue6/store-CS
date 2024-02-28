@@ -40,6 +40,11 @@ class Restaurant extends Store {
     this.hasFoodPoisoning = hasFoodPoisoning;
   }
 
+  public void serveAlchohol() {
+    print("Enjoy a refreshing beer at " + this.name + "!");
+    print("");
+  }
+
   public void checkFoodPoisining() {
     if ((Math.random()) * (100 - 1) + 1 > 70) {
       this.setFoodPoisoning(true);

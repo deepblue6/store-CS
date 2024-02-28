@@ -53,7 +53,6 @@ public class Main {
         if(input.equals("1")) {
             print("Taco place has a lot of options for food. Which dish do you want to order? We have a lot of options.");
             r.printMenu("Taco Place", r.getMenu());
-            String inp = scanner.nextLine();
             findInListRest(r);
         }
         else if(input.equals("2")) {
@@ -184,7 +183,7 @@ public class Main {
             for (int i = 0; i < st.getMenu().size(); i++) {
                 Store.Item item = st.getMenu().get(i);
                 if (item.getName().equals(selectedCloth)) {
-                    print("You bought " + selectedCloth + "! Heading back to the main plaza now...");
+                    print("You bought " +ANSI_GREEN + selectedCloth + ANSI_RESET+"! Heading back to the main plaza now...");
                     return;
                 }
             }

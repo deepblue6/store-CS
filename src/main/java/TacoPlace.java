@@ -15,22 +15,24 @@ class TacoPlace extends Restaurant {
     this.hasMariachiBand = true;
     this.spicyLevel = 0.81;
     this.salsaVarieties = new ArrayList<>();
-    this.foodItems.add(new Item("burrito"));
-    this.foodItems.add(new Item("beef burrito"));
-    this.foodItems.add(new Item("chicken burrito"));
-    this.foodItems.add(new Item("steak burrito"));
+    this.foodItems.add(new Item("burritos"));
+    this.foodItems.add(new Item("beef burritos"));
+    this.foodItems.add(new Item("chicken burritos"));
+    this.foodItems.add(new Item("steak burritos"));
     this.foodItems.add(new Item("chicken tacos"));
-    this.foodItems.add(new Item("steak taco"));
-    this.foodItems.add(new Item("beef taco"));
+    this.foodItems.add(new Item("steak tacos"));
+    this.foodItems.add(new Item("beef tacos"));
     this.foodItems.add(new Item("tortilla chips"));
     this.foodItems.add(new Item("tortilla tacos"));
   }
 
   public void initializeMenu() {
-    Collections.addAll(this.menu, "Extra Cheese Taco", "Double Beef Burrito", "Chicken Burrito", "Steak Burrito",
-        "Chicken Tacos", "Steak Taco");
     Collections.addAll(this.salsaVarieties,
         "Mango Salsa", "Pico de Gallo Salsa", "Corn Salsa", "Tomatillo Salsa", "Chile Salsa", "Jal Salsa");
+  }
+  
+  public ArrayList<Item> getMenu() {
+    return this.foodItems;
   }
 
 
