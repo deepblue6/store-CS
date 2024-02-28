@@ -46,13 +46,13 @@ public class Clothing extends Store {
     public boolean checkSteal() {
         if ((Math.random()) * (100 - 1) + 1 > 50) {
             this.setSteal(true);
-            System.out.println("You stole the " + this.name + "! You win!");
-            System.out.println();
-            return true;
-        } else {
-            System.out.println("You got jumped by Utsav the Security Guard! See you next time!");
+            System.out.println("You stole the " + this.name + "! Nice job!");
             System.out.println();
             return false;
+        } else {
+            System.out.println("The security guard found you! Bye bye...");
+            System.out.println();
+            return true;
         }
     }
 

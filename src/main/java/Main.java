@@ -16,8 +16,6 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-
         while (!saysExit) {
             String startChoice = askStart();
             if (startChoice.equals("1")) {
@@ -34,9 +32,39 @@ public class Main {
                 } else if (input.equals("exit")) {
                     break;
                 }
-            } else if (startChoice.equals("exit")) {
+            } 
+            else if(startChoice.equals("2")) {
+                handleRestaurant();
+            }
+            else if (startChoice.equals("exit")) {
                 break;
             }
+        }
+    }
+
+    private static void handleRestaurant() {
+        TacoPlace r = new TacoPlace("Blue", "Gucci Drip Swag", "small");
+        r.initializeMenu();
+        Scanner scanner = new Scanner(System.in);
+        print("Which restaurant do you want to go to?");
+        print("[1] Taco Place");
+        print("[2] Other restaurant");
+        String input = scanner.nextLine();
+        if(input.equals("1")) {
+            print("Taco place has a lot of options for food. Which dish do you want to order? We have a lot of options.");
+            r.printMenu("Taco Place", r.getMenu());
+            String inp = scanner.nextLine();
+            findInListRest(r);
+        }
+        else if(input.equals("2")) {
+
+        }
+
+        else if(input.equals("exit")) {
+            saysExit = true;
+        }
+        else {
+            print("I could not understand. Could you try again please?");
         }
     }
 
@@ -146,6 +174,21 @@ public class Main {
                 }
             }
             print("We could not find that item in the clothing store. Heading back to main plaza now...");
+        }
+    }
+
+    public static void findInListRest(Restaurant st) {
+        Scanner inp = new Scanner(System.in);
+        if (inp != null) {
+            String selectedCloth = inp.nextLine();
+            for (int i = 0; i < st.getMenu().size(); i++) {
+                Store.Item item = st.getMenu().get(i);
+                if (item.getName().equals(selectedCloth)) {
+                    print("You bought " + selectedCloth + "! Heading back to the main plaza now...");
+                    return;
+                }
+            }
+            print("We could not find that item in the restaurant. Heading back to main plaza now...");
         }
     }
 }

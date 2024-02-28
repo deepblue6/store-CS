@@ -7,6 +7,7 @@ class Restaurant extends Store {
   private boolean hasFoodPoisoning;
   protected ArrayList<String> menu = new ArrayList<String>();
   protected double price;
+  private ArrayList<Item> foodItems = new ArrayList<Item>();
 
   public Restaurant(String col, String n, String size) {
     super(col, n, size);
@@ -25,6 +26,10 @@ class Restaurant extends Store {
       }
     }
     return false;
+  }
+
+  public ArrayList<Item> getMenu() {
+    return this.foodItems;
   }
 
   public boolean hasFoodPoisoning() {

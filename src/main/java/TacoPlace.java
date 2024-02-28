@@ -6,7 +6,7 @@ class TacoPlace extends Restaurant {
   private List<String> salsaVarieties;
   private boolean hasMariachiBand;
   private double spicyLevel;
-  private ArrayList<Food> foodItems = new ArrayList<Food>();
+  private ArrayList<Item> foodItems = new ArrayList<Item>();
 
 
   public TacoPlace(String col, String n, String size) {
@@ -15,7 +15,15 @@ class TacoPlace extends Restaurant {
     this.hasMariachiBand = true;
     this.spicyLevel = 0.81;
     this.salsaVarieties = new ArrayList<>();
-    this.foodItems.add(new Food("burrito", 5.50));
+    this.foodItems.add(new Item("burrito"));
+    this.foodItems.add(new Item("beef burrito"));
+    this.foodItems.add(new Item("chicken burrito"));
+    this.foodItems.add(new Item("steak burrito"));
+    this.foodItems.add(new Item("chicken tacos"));
+    this.foodItems.add(new Item("steak taco"));
+    this.foodItems.add(new Item("beef taco"));
+    this.foodItems.add(new Item("tortilla chips"));
+    this.foodItems.add(new Item("tortilla tacos"));
   }
 
   public void initializeMenu() {
@@ -35,6 +43,7 @@ class TacoPlace extends Restaurant {
     print("Enjoying delicious tacos at " + this.name + "!");
     print("");
   }
+
 
   public void prepareGuacamole() {
     print("Fresh guacamole is being prepared at " + this.name + "!");
