@@ -1,3 +1,4 @@
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.util.Scanner;
 import javax.sound.sampled.*;
@@ -20,7 +21,7 @@ public class Main {
     public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void main(String[] args) {
-        playMusic("C:/Users/julmu/Programming/Java/Store-CS/src/main/java/fiesta.wav");
+        playMusic("C:/Users/Jules M/Programming/Java/store-CS/src/main/java/fiesta.wav");
         Scanner scanner = new Scanner(System.in);
         while (!saysExit) {
             String startChoice = askStart();
@@ -199,22 +200,26 @@ public class Main {
 
     //
 
-    public static synchronized void playMusic(final String url) {
-        new Thread(new Runnable() {
-        // The wrapper thread is unnecessary, unless it blocks on the
-        // Clip finishing; see comments.
-          public void run() {
+    public static synchronized void playMusic(final String filePath) {
+    new Thread(new Runnable() {
+        public void run() {
             try {
-              Clip clip = AudioSystem.getClip();
-              AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                Main.class.getResourceAsStream("C:/Users/julmu/Programming/Java/Store-CS/src/main/java/fiesta.mp3"));
-              clip.open(inputStream);
-              clip.start(); 
+                File file = new File(filePath);
+                AudioInputStream inputStream = AudioSystem.getAudioInputStream(file);
+                AudioInputStream bufferedInputStream = new AudioInputStream(
+                        new BufferedInputStream(new FileInputStream(file)),
+                        inputStream.getFormat(),
+                        inputStream.getFrameLength());
+
+                Clip clip = AudioSystem.getClip();
+                clip.open(bufferedInputStream);
+                clip.start();
             } catch (Exception e) {
-              System.err.println(e.getMessage());
+                System.err.println(e.getMessage());
             }
-          }
-        }).start();
-      }
+        }
+    }).start();
+}
+
       
 }
