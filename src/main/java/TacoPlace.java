@@ -30,10 +30,6 @@ class TacoPlace extends Restaurant {
     Collections.addAll(this.salsaVarieties,
         "Mango Salsa", "Pico de Gallo Salsa", "Corn Salsa", "Tomatillo Salsa", "Chile Salsa", "Jal Salsa");
   }
-  
-  public ArrayList<Item> getMenu() {
-    return this.foodItems;
-  }
 
 
   ///

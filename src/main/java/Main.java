@@ -1,4 +1,9 @@
+import java.io.File;
 import java.util.Scanner;
+import javax.sound.sampled.*;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class Main {
     private static boolean saysExit = false;
@@ -15,6 +20,7 @@ public class Main {
     public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void main(String[] args) {
+        playMusic("C:/Users/julmu/Programming/Java/Store-CS/src/main/java/fiesta.wav");
         Scanner scanner = new Scanner(System.in);
         while (!saysExit) {
             String startChoice = askStart();
@@ -190,4 +196,25 @@ public class Main {
             print("We could not find that item in the restaurant. Heading back to main plaza now...");
         }
     }
+
+    //
+
+    public static synchronized void playMusic(final String url) {
+        new Thread(new Runnable() {
+        // The wrapper thread is unnecessary, unless it blocks on the
+        // Clip finishing; see comments.
+          public void run() {
+            try {
+              Clip clip = AudioSystem.getClip();
+              AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                Main.class.getResourceAsStream("C:/Users/julmu/Programming/Java/Store-CS/src/main/java/fiesta.mp3"));
+              clip.open(inputStream);
+              clip.start(); 
+            } catch (Exception e) {
+              System.err.println(e.getMessage());
+            }
+          }
+        }).start();
+      }
+      
 }
