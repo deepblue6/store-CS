@@ -51,7 +51,8 @@ public class Main {
     }
 
     private static void handleRestaurant() {
-        playMusic("C:/Users/Jules M/Programming/Java/store-CS/src/main/java/fiesta.wav");
+        System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
+        playMusic("C:/Users/julesmundur/Documents/Programming/Java/store-CS/src/fiesta.wav");
         TacoPlace r = new TacoPlace("Blue", "Gucci Drip Swag", "small");
         r.initializeMenu();
         Scanner scanner = new Scanner(System.in);
@@ -202,6 +203,7 @@ public class Main {
 
 private static boolean musicPlaying = false;
 private static void playMusicHelper(String filePath) {
+    System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
     try {
         File file = new File(filePath);
         AudioInputStream inputStream = AudioSystem.getAudioInputStream(file);
@@ -238,6 +240,7 @@ private static void playMusicHelper(String filePath) {
 }
 
 public static void playMusic(final String filePath) {
+    System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
     musicPlaying = true;
     new Thread(new Runnable() {
         @Override
@@ -258,7 +261,7 @@ public static void checkStop() {
     // Check if music is not already playing
     if (!musicPlaying) {
         // Play music only if it's not already playing
-        playMusic("C:/Users/Jules M/Programming/Java/store-CS/src/main/java/fiesta.wav");
+        playMusic("C:/Users/julesmundur/Documents/Programming/Java/store-CS/src/fiesta.wav");
 
         // Set a flag to indicate that music is currently playing
         musicPlaying = true;
